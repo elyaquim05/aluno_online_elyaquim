@@ -503,40 +503,6 @@ mvn spring-boot:run
 http://localhost:8080
 ```
 
-**Exemplos com `curl`:**
-
-```bash
-# Criar um professor
-curl -X POST http://localhost:8080/professores \
-  -H "Content-Type: application/json" \
-  -d '{"nome":"Maria Oliveira","email":"maria@email.com","cpf":"987.654.321-00"}'
-
-# Criar uma disciplina vinculada ao professor 1
-curl -X POST http://localhost:8080/disciplinas \
-  -H "Content-Type: application/json" \
-  -d '{"nome":"Banco de Dados","cargaHoraria":60,"professor":{"id":1}}'
-
-# Criar um aluno
-curl -X POST http://localhost:8080/alunos \
-  -H "Content-Type: application/json" \
-  -d '{"nome":"João Silva","email":"joao@email.com","cpf":"123.456.789-00"}'
-
-# Matricular o aluno 1 na disciplina 1
-curl -X POST http://localhost:8080/matriculas \
-  -H "Content-Type: application/json" \
-  -d '{"aluno":{"id":1},"disciplina":{"id":1}}'
-
-# Lançar notas na matrícula 1
-curl -X PATCH http://localhost:8080/matriculas/atualizar-notas/1 \
-  -H "Content-Type: application/json" \
-  -d '{"nota1":8.0,"nota2":9.0}'
-
-# Trancar matrícula 1
-curl -X PATCH http://localhost:8080/matriculas/trancar/1
-```
-
----
-
 ## Autor
 
 Desenvolvido por **Elyaquim** — [@elyaquim05](https://github.com/elyaquim05)
