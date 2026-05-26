@@ -24,9 +24,9 @@ public class AlunoService {
 
     public Optional<Aluno> buscarAlunoPorId(long id){return alunoRepository.findById(id);}
 
-    public void deletarAlunoPorId(Long id) {alunoRepository.deleteById(id);}
+    public void deletarAlunoPorId(long id) {alunoRepository.deleteById(id);}
 
-    public void  atualizarAlunoPorId(Long id,Aluno alunoEditado) {
+    public void  atualizarAlunoPorId(long id,Aluno alunoEditado) {
         alunoEditado.setId(id);
         alunoRepository.save(alunoEditado);}
 
